@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Registration</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css">
+
+	body{background-color:#e8e8e8;}
+	label
+	{
+	font-size:13px;
+	width:150px;
+	display:inline-block;
+	text-align:center;
+	font-family:"Times New Roman",times,sans-serif;
+	}
+	
+	
+	
+	 #select1{
+	width:50%;
+	margin:5px 0;
+	}
+	
+	input{
+	width:100%;
+	padding: 10px 15px;
+	margin:5px 0;
+	box-sizing: border-box;
+	}
+	
+	h2{
+	margin:1% auto;
+	text-align:center;
+	color:blue;
+	font-size:25px;
+	}
+	
+	.space{
+	width:10px;
+	height:auto;
+	display:inline-block;}
+	
+	.form-control{
+	width:175px;
+	height:20px;
+	display:inline-block;}
+</style>
+
+
+	</head>
+	<body>
+		<!-- Create HTML registraion form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+			<!-- Success message -->
+			<div th:if="${param.success}">
+				<div class="alert alert-info">You've successfully registered to our awesone application!</div>
+				</div>
+				<h1>Registration</h1>
+				<form action="#" th:action="@{/registration}" method="post" th:objct="${user}">
+					<div class="form-group">
+						<label class="control-label" for="name">Name</label>
+					<input id="name" class="form-control" name="name" field="*{name}"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="bday">Brth Date</label>
+					<input id="bday" class="form-control" name="bday" type="date" field="*{bday}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="phnumber">Mobile Number</label>
+					<input id="phnumber" class="form-control" name="phnumber" field="*{phnumber}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="email">E-Mail</label>
+					<input id="email" class="form-control" name="email" type="email" field="*{email}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="country">Country</label>
+					<input id="country" class="form-control" name="country" field="*{country}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="state">State</label>
+					<input id="state" class="form-control" name="state" field="*{state}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="createddate">Created Date</label>
+					<input id="createddate" class="form-control" name="createddate" type="datetime-local" field="*{createddate}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="createdby">created By</label>
+					<input id="createdby" class="form-control" name="createdby" field="*{createdby}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="status">status</label>
+					<input id="status" class="form-control" name="status" field="*{status}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="role">Role</label>
+					<input id="role" class="form-control" name="role" field="*{role}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="username">User Name</label>
+					<input id="username" class="form-control" name="username" field="*{username}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group"><label class="control-label" for="password">Password</label>
+					<input id="password" class="form-control" name="password" type="password" field="*{password}" required autofocus="autofocus"/>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-success">Register</button> 
+						<span>Already Registered? <a href="/" th:href="@{Login}">Login here</a></span>
+					</div>
+				</form>
+			</div>
+		</div>
+		</div>
+		
+	</body>
+</html>
